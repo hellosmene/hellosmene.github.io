@@ -4,16 +4,35 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @apply font-sans bg-primary text-primary;
 }
 
 code {
-  font-family: "IBM Plex Mono", monospace;
   font-weight: 400;
   font-style: normal;
+
+  @apply font-mono;
+}
+
+h1 {
+  font-weight: bold;
+  @apply text-xl md:text-4xl;
+}
+
+@layer utilities {
+  .glass-effect {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.8px);
+    @apply bg-surface-500 border border-solid border-primary;
+  }
 }
